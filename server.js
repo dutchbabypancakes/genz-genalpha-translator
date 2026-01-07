@@ -16,10 +16,8 @@ const client = new OpenAI({
     baseURL: "https://api.groq.com/openai/v1",
 });
 
-const PORT = 3000;
-
 app.post("/translate", async (req, res) => {
-    const { text } = req.body;
+    const { text } = req.body.text;
     if (!text) return res.status(400).json({ error: "No text provided" });
 
     try {
@@ -38,10 +36,10 @@ Translate this phrase with Gen Z slang into proper english, without changing the
 
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: "Error translating text" });
+        res.status(500).json({ error: "Error when translating text" });
     }
 });
 
-app.listen(PORT, () =>
-    console.log(`Server running on http://localhost:${PORT}`)
-);
+app.listen(3001, () =>
+    console.log(`Server running on http://localhost:${3001}`)
+);//backend port = 3001
