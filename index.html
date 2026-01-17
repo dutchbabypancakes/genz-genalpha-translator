@@ -59,22 +59,11 @@
       border-bottom: 1px solid #e0e0e0;
     }
 
-    textarea {
+    .text {
       flex: 1;
       padding: 16px;
       font-size: 18px;
-      border: none;
-      resize: none;
-      outline: none;
       font-family: inherit;
-    }
-
-    .output {
-      flex: 1;
-      padding: 16px;
-      font-size: 18px;
-      color: #202124;
-      background: #f8f9fa;
     }
 
     .divider {
@@ -138,7 +127,7 @@
     <!-- LEFT PANEL -->
     <div class="panel">
       <div class="panel-header">Gen Z</div>
-      <textarea id="inputText" placeholder="Type Gen Z slang here"></textarea>
+      <div class="text" id="inputText" placeholder="Type Gen Z slang here"></div>
       <div class="actions">
         <button id="translateBtn">Translate</button>
       </div>
@@ -148,8 +137,8 @@
 
     <!-- RIGHT PANEL -->
     <div class="panel">
-      <div class="panel-header">Gen Alpha</div>
-      <div class="output" id="outputText">Translation</div>
+      <div class="panel-header">English</div>
+      <div class="text" id="outputText">Translation</div>
     </div>
 
   </div>
