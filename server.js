@@ -24,14 +24,14 @@ app.post("/translate", async (req, res) => {
         const response = await client.responses.create({
             model: "openai/gpt-oss-20b",
             input: `
-Translate this phrase with Gen Z slang into proper english, without changing the meaning of the phrase:
+Translate this Gen Z slang input into proper english, without changing the meaning of the phrase:
 
 "${text}"
 `,
         });
 
         // Groq Responses API returns `output_text` for simple use
-        const translated = response.output_text || "No translation returned";
+        const translated = response.output_text || "Unable to translate";
         res.json({ translated });
 
     } catch (err) {
