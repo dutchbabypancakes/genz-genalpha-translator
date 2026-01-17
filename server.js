@@ -17,7 +17,7 @@ const client = new OpenAI({
 });
 
 app.post("/translate", async (req, res) => {
-    const { text } = req.body.text;
+    const { text } = req.body;
     if (!text) return res.status(400).json({ error: "No text provided" });
 
     try {
